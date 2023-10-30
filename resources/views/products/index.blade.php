@@ -1,57 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Product</h1>
-    <div>
-        @if(session()->has('success'))
-            <div>
-                {{session('success')}}
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100" align="center">
+                    {{ __("Product") }}
             </div>
-        @endif
-    </div>
-    <div>
-        <div>
-            <a href="{{route('product.create')}}">Create a Product</a>
         </div>
-        <table border="1">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            @foreach($products as $product )
-                <tr>
-                    <td>{{$product->id}}</td>
-                    <td>{{$product->name}}</td>
-                    <td>{{$product->qty}}</td>
-                    <td>{{$product->price}}</td>
-                    <td>{{$product->description}}</td>
-                    <td>
-                        <a href="{{route('product.edit', ['product' => $product])}}">Edit</a> |
-                    </td>
-                    <td>
-                        <form method="post" action="{{route('product.destroy', ['product'=> $product])}}">
-                            @csrf
-                            @method('delete')
-                            <input type="submit" value="Delete"/>
-                        </form>
-                    </td>
-                </tr>
+        <br>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    
+                    <div>
+                        @if(session()->has('success'))
+                            <div>
+                                {{session('success')}}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        <div align="center">
+                            <a href="{{route('product.create')}}" >Create a Product</a>
+                        </div>
+                        <br>
+                        <table align="center" border="1" class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            @foreach($products as $product )
+                                <tr>
+                                    <td>{{$product->id}}</td>
+                                    <td>{{$product->name}}</td>
+                                    <td>{{$product->qty}}</td>
+                                    <td>{{$product->price}}</td>
+                                    <td>{{$product->description}}</td>
+                                    <td>
+                                        <a href="{{route('product.edit', ['product' => $product])}}">Edit</a> |
+                                    </td>
+                                    <td>
+                                        <form method="post" action="{{route('product.destroy', ['product'=> $product])}}">
+                                            @csrf
+                                            @method('delete')
+                                            <input type="submit" value="Delete"/>
+                                        </form>
+                                    </td>
+                                </tr>
 
-            @endforeach
+                            @endforeach
 
-        </table>
+                        </table>
+            </div>
+        </div>
     </div>
-    
-</body>
-</html>
+</x-app-layout>
+
+
+
+
