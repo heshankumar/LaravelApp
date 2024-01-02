@@ -1,17 +1,25 @@
 <x-app-layout>
 
+<<<<<<< HEAD
     <x-slot name="header" >
         <h2 class="font-semibold text-xl   text-gray-800 dark:text-gray-900 leading-tight">
             {{ __('Customer Details') }}
         </h2>
     </x-slot>
+=======
+    
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
 
 
     <div class="py-12">
         <div class="max-w-7xl ml-60 sm:px-6 lg:px-8 space-y-6">
             <div class="">
 
+<<<<<<< HEAD
                 
+=======
+                <h1>Customer Details </h1>
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
                 
 
                 <form method="POST" action="{{route('customer.store')}}">
@@ -51,7 +59,20 @@
 
 
 
+<<<<<<< HEAD
             
+=======
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+
+                
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    
+</div>
+
+                
+            </div>
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
 
 
 
@@ -60,7 +81,13 @@
 
 
 
+<<<<<<< HEAD
             
+=======
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+                
+            </div>
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
         </div>
     </div>
     

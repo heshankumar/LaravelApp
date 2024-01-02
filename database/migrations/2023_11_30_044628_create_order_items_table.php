@@ -20,7 +20,11 @@ return new class extends Migration
             $table->timestamps();
 
         $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+<<<<<<< HEAD
         $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+=======
+        $table->foreign('[product_id')->references('id')->on('products')->onDelete('cascade');
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
         
         });
     }

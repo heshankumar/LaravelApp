@@ -16,7 +16,11 @@ return new class extends Migration
             $table->string('product_name');
             $table->string('manufacturer');
             $table->integer('qty');
+<<<<<<< HEAD
             $table->integer('unit_price');
+=======
+            $table->decimal('unit_price');
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
             $table->unsignedBigInteger('supllier_id');
             $table->foreign('supllier_id')->references('id')->on('suppliers')->onUpdate('cascade')->onDelete('cascade');
             $table->string('type');

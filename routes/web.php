@@ -8,9 +8,12 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
+<<<<<<< HEAD
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\StripeController;
+=======
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
 
 /*
 |--------------------------------------------------------------------------
@@ -98,16 +101,21 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/order', [OrderController::class, 'index'])->name('order.index');
     Route::get('/order/details', [OrderController::class, 'details'])->name('order.order');
+<<<<<<< HEAD
     
     
     Route::post('/order/details/save', [OrderItemController::class, 'store'])->name('order.store');
     
+=======
+    Route::post('/order/details', [OrderController::class, 'store'])->name('order.store');
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+<<<<<<< HEAD
 
     Route::get('cart', [CartsController::class, 'cart'])->name('cart');
     Route::get('/add-to-cart/{id}', [CartsController::class, 'addToCart'])->name('add_to_cart');
@@ -119,6 +127,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/success', [StripeController::class, 'success'])->name('success');
     Route::get('/cancel', [StripeController::class, 'cancel'])->name('cancel');
 
+=======
+>>>>>>> 51aa26922c21590e886db36ba53e476e5eb8cdc1
     
 });
 
